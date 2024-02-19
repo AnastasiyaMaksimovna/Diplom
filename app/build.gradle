@@ -125,4 +125,10 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:3.6.0-alpha02"
     implementation "androidx.test.espresso:espresso-idling-resource:$test_espresso_espresso_idling_resource"
     androidTestImplementation "androidx.test.espresso:espresso-intents:$test_espresso_espresso_intents"
+    def allure_version = "2.4.0"
+    androidTestImplementation "io.qameta.allure:allure-kotlin-android:$allure_version"
+    androidTestImplementation "io.qameta.allure:allure-kotlin-model:$allure_version"
+    androidTestImplementation "io.qameta.allure:allure-kotlin-commons:$allure_version"
+    androidTestImplementation "io.qameta.allure:allure-kotlin-junit4:$allure_version"
+
 }
