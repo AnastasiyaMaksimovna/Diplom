@@ -30,11 +30,16 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import io.qameta.allure.android.runners.AllureAndroidJUnit4;
+import io.qameta.allure.kotlin.Epic;
+import io.qameta.allure.kotlin.Story;
 import ru.iteco.fmhandroid.R;
 import ru.iteco.fmhandroid.ui.AppActivity;
 
 @LargeTest
-@RunWith(AndroidJUnit4.class)
+//@RunWith(AndroidJUnit4.class)
+@RunWith(AllureAndroidJUnit4.class)
+@Epic("Тест-кейсы для вкладки Меню мобильного приложения Мобильный хоспис")
 public class VkladkaGlavnayaTest {
 
     @Rule
@@ -42,6 +47,7 @@ public class VkladkaGlavnayaTest {
             new ActivityScenarioRule<>(AppActivity.class);
 
     @Test
+    @Story("Переход во вкладку Главная через вкладку меню мобильного приложения (Позитивный)")
     public void vkladkaGlavnayaTest() {
         ViewInteraction appCompatImageButton = onView(
                 allOf(withId(R.id.main_menu_image_button), withContentDescription("Главное меню"),

@@ -33,10 +33,15 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import io.qameta.allure.android.runners.AllureAndroidJUnit4;
+import io.qameta.allure.kotlin.Epic;
+import io.qameta.allure.kotlin.Story;
 import ru.iteco.fmhandroid.R;
 
 @LargeTest
-@RunWith(AndroidJUnit4.class)
+//@RunWith(AndroidJUnit4.class)
+@RunWith(AllureAndroidJUnit4.class)
+@Epic("Тест-кейсы для вкладки Авторизация мобильного приложения Мобильный хоспис")
 public class NegativPasswordRegistrTest {
 
     @Rule
@@ -44,6 +49,7 @@ public class NegativPasswordRegistrTest {
             new ActivityScenarioRule<>(AppActivity.class);
 
     @Test
+    @Story("Поле Пароль состоит из букв разного регистра, при авторизации, в мобильном приложении Мобильный хоспис (Негативный)")
     public void negativPasswordRegistrTest() {
         ViewInteraction textInputEditText = onView(
                 allOf(childAtPosition(

@@ -27,11 +27,16 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import io.qameta.allure.android.runners.AllureAndroidJUnit4;
+import io.qameta.allure.kotlin.Epic;
+import io.qameta.allure.kotlin.Story;
 import ru.iteco.fmhandroid.R;
 import ru.iteco.fmhandroid.ui.AppActivity;
 
 @LargeTest
-@RunWith(AndroidJUnit4.class)
+//@RunWith(AndroidJUnit4.class)
+@RunWith(AllureAndroidJUnit4.class)
+@Epic("Тест-кейсы для вкладки Главный экран мобильного приложения Мобильный хоспис")
 public class ExpandNewsButtonTest {
 
     @Rule
@@ -39,6 +44,7 @@ public class ExpandNewsButtonTest {
             new ActivityScenarioRule<>(AppActivity.class);
 
     @Test
+    @Story("Работоспособность кнопки для разворачивания списка новостей мобильного приложения (Позитивный)")
     public void expandNewsButtonTest() {
         ViewInteraction materialButton = onView(
                 allOf(withId(R.id.expand_material_button),

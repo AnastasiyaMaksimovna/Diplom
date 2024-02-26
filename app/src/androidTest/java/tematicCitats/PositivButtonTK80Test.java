@@ -29,11 +29,16 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import io.qameta.allure.android.runners.AllureAndroidJUnit4;
+import io.qameta.allure.kotlin.Epic;
+import io.qameta.allure.kotlin.Story;
 import ru.iteco.fmhandroid.R;
 import ru.iteco.fmhandroid.ui.AppActivity;
 
 @LargeTest
-@RunWith(AndroidJUnit4.class)
+//@RunWith(AndroidJUnit4.class)
+@RunWith(AllureAndroidJUnit4.class)
+@Epic("Тест-кейсы для вкладки Тематические цитаты мобильного приложения Мобильный хоспис")
 public class PositivButtonTK80Test {
 
     @Rule
@@ -41,6 +46,7 @@ public class PositivButtonTK80Test {
             new ActivityScenarioRule<>(AppActivity.class);
 
     @Test
+    @Story("Развернуть/свернуть тематическую цитату, во вкладке Главное - жить любя, мобильного приложения(Позитивный)")
     public void positivButtonTK80Test() {
         ViewInteraction appCompatImageButton = onView(
                 allOf(withId(R.id.our_mission_image_button), withContentDescription("Наша Миссия"),

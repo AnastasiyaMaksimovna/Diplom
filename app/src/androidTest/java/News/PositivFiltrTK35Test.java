@@ -30,11 +30,16 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import io.qameta.allure.android.runners.AllureAndroidJUnit4;
+import io.qameta.allure.kotlin.Epic;
+import io.qameta.allure.kotlin.Story;
 import ru.iteco.fmhandroid.R;
 import ru.iteco.fmhandroid.ui.AppActivity;
 
 @LargeTest
-@RunWith(AndroidJUnit4.class)
+//@RunWith(AndroidJUnit4.class)
+@RunWith(AllureAndroidJUnit4.class)
+@Epic("Тест-кейсы для вкладки Новости мобильного приложения Мобильный хоспис")
 public class PositivFiltrTK35Test {
 
     @Rule
@@ -42,6 +47,7 @@ public class PositivFiltrTK35Test {
             new ActivityScenarioRule<>(AppActivity.class);
 
     @Test
+    @Story("Работоспособность фильтрации выпадающего списка по первым буквам поля Категории (Позитивный)")
     public void positivFiltrTK35Test() {
         ViewInteraction materialTextView = onView(
                 allOf(withId(R.id.all_news_text_view), withText("Все новости"),

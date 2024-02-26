@@ -36,11 +36,16 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import io.qameta.allure.android.runners.AllureAndroidJUnit4;
+import io.qameta.allure.kotlin.Epic;
+import io.qameta.allure.kotlin.Story;
 import ru.iteco.fmhandroid.R;
 import ru.iteco.fmhandroid.ui.AppActivity;
 
 @LargeTest
-@RunWith(AndroidJUnit4.class)
+//@RunWith(AndroidJUnit4.class)
+@RunWith(AllureAndroidJUnit4.class)
+@Epic("Тест-кейсы для вкладки Редактирование мобильного приложения Мобильный хоспис")
 public class NegativManualTimsTK78Test {
 
     @Rule
@@ -48,6 +53,7 @@ public class NegativManualTimsTK78Test {
             new ActivityScenarioRule<>(AppActivity.class);
 
     @Test
+    @Story("Ручной ввод времени в поле Время, при создании новости, во вкладке Панель управления мобильного приложения (Негативный)")
     public void negativManualTimsTK78Test() {
         ViewInteraction materialTextView = onView(
                 allOf(withId(R.id.all_news_text_view), withText("Все новости"),
